@@ -44,7 +44,6 @@ namespace QA.Inituitu.Net.Parser
                 // Title
                 outputWriter.WriteLine(q);
                 outputWriter.WriteLine(new String('-', q.Length));
-                outputWriter.WriteLine();
 
                 // Body
                 foreach (var ans in a.Where(ans => ans.NodeType == HtmlNodeType.Text))
