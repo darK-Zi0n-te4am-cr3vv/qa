@@ -74,8 +74,14 @@ namespace QA.Inituitu.Net.Parser
 
             var lastPageIndex = GetLastPageIndex(baseDoc);
 
-            Console.WriteLine(lastPageIndex);
-            ParsePage(baseDoc, Console.Out);
+            var output = Console.Out;
+
+            for (var index = 0; index <= lastPageIndex; index++)
+            {
+                var url = String.Format("{0}?page={1}", baseUrl, index);
+
+                ParsePage(DownloadDocument(url), output);
+            }
         }
     }
 }
