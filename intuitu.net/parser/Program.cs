@@ -66,8 +66,7 @@ namespace QA.Inituitu.Net.Parser
 
         static void Main(string[] args)
         {
-            const string baseUrl =
-                "http://www.intuitu.net/category/Kategorii-slovarei/Protokoly-bezopasnogo-setevogo-vzaimodeistviYa";
+            var baseUrl = args[0];
 
             Console.OutputEncoding = Encoding.UTF8;
 
