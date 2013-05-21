@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 
@@ -33,8 +34,12 @@ namespace QA.Inituitu.Net.Parser
                 var q = qa.SelectSingleNode(".//h2[@class='title']/a/text()")
                           .InnerText;
 
-                var a = qa.SelectSingleNode(".//div[@class='content']/p/p")
-                          .ChildNodes;
+                var contentNode = qa.SelectSingleNode(".//div[@class='content']/p/p");
+
+                // FIXME: Workaround.
+                if (contentNode == null) continue;
+
+                var a = contentNode.ChildNodes;
 
                 // Title
                 outputWriter.WriteLine(q);
