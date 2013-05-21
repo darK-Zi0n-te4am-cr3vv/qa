@@ -70,6 +70,8 @@ namespace QA.Inituitu.Net.Parser
             const string baseUrl =
                 "http://www.intuitu.net/category/Kategorii-slovarei/Protokoly-bezopasnogo-setevogo-vzaimodeistviYa";
 
+            Console.OutputEncoding = Encoding.UTF8;
+
             var baseDoc = DownloadDocument(baseUrl);
 
             var lastPageIndex = GetLastPageIndex(baseDoc);
